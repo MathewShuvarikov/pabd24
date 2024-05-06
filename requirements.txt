@@ -1,0 +1,4 @@
+# external requirements
+flask
+flask-cors
+cianparser
