@@ -5,3 +5,7 @@ cianparser
 pandas
 boto3
 python-dotenv
+jupyter
+matplotlib
+numpy
+scikit-learn
