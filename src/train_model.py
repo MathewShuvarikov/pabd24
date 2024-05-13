@@ -3,6 +3,7 @@ import logging
 import pandas as pd
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_absolute_error
+from sklearn.model_selection import train_test_split
 from joblib import dump
 
 logger = logging.getLogger(__name__)
@@ -19,14 +20,12 @@ MAPPING = 'data/mapping/county.txt'
 
 def main(args):
     df_train = pd.read_csv(TRAIN_DATA, index_col='url_id')
-    mapping = pd.read_csv(MAPPING, sep='|')
-    df_train = df_train.merge(mapping, how='left', left_on='district', right_on='district_name')
     df_val = pd.read_csv(VAL_DATA, index_col='url_id')
-    df_val = df_val.merge(mapping, how='left', left_on='district', right_on='district_name')
-
-    df_train = pd.get_dummies(df_train, columns=['county_short'],  drop_first=True, dtype=int)
-    df_val =pd.get_dummies(df_val, columns=['county_short'],  drop_first=True, dtype=int)
-
+    df = pd.concat([df_train, df_val])
+    mapping = pd.read_csv(MAPPING, sep='|')
+    df = df.merge(mapping, how='left', left_on='district', right_on='district_name')
+    df = pd.get_dummies(df, columns=['county_short'], drop_first=True, dtype=int)
+    df_train, df_val = train_test_split(df, test_size=0.1, random_state=0)
 
     x_train = df_train.select_dtypes(include='number').drop(columns='price')
     y_train = df_train['price']
@@ -40,9 +39,6 @@ def main(args):
     logger.info(f'Saved to {args.model}')
 
     r2 = linear_model.score(x_train, y_train)
-    ## Костыли ##
-    x_val['county_short_ТАО'] = 0
-    x_val = x_val[x_train.columns]
 
     y_pred = linear_model.predict(x_val)
     mae = mean_absolute_error(y_pred, y_val)
