@@ -34,7 +34,7 @@ def main(args):
 
     # border = int(args.split * len(new_df))
     # train_df, val_df = new_df[0:border], new_df[border:-1]
-    train_df, val_df = train_test_split(new_df, train_size=TRAIN_SIZE, random_state=0)
+    train_df, val_df = train_test_split(new_df, train_size=TRAIN_SIZE, random_state=1)
     train_df.to_csv(OUT_TRAIN)
     val_df.to_csv(OUT_VAL)
     logger.info(f'Write {args.input} to train.csv and val.csv. Train set size: {args.split}')
