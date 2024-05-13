@@ -20,8 +20,8 @@ def main(args):
     )
 
     for csv_path in args.input:
-        object_name = f'{YOUR_ID}/' + csv_path.replace('\\', '/')
-        client.download_file(csv_path, BUCKET_NAME, object_name)
+        remote_name = f'{YOUR_ID}/' + csv_path.replace('\\', '/')
+        client.download_file(BUCKET_NAME,  remote_name, csv_path)
 
 
 if __name__ == '__main__':
