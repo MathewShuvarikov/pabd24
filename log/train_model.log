@@ -1,0 +1,15 @@
+2024-05-13 20:29:27,454 Saved to models/linear_regression_v01.joblib
+2024-05-13 20:31:32,197 Saved to models/linear_regression_v01.joblib
+2024-05-13 20:32:11,494 Saved to models/linear_regression_v01.joblib
+2024-05-13 20:32:34,394 Saved to models/linear_regression_v01.joblib
+2024-05-13 20:32:34,394 R2 = 1.000     MAE = 0     Price = 0 * area + 0
+2024-05-13 20:33:17,078 Saved to models/linear_regression_v01.joblib
+2024-05-13 20:33:17,078 R2 = 1.000     MAE = 0     Price = 0 * area + 0
+2024-05-13 20:37:27,668 Saved to models/linear_regression_v01.joblib
+2024-05-13 20:37:27,673 R2 = 1.000     MAE = 0     Price = 0 * area + 0
+2024-05-13 20:39:36,844 Saved to models/linear_regression_v01.joblib
+2024-05-13 20:39:36,844 R2 = 0.530     MAE = 3035887     Price = 248852 * area + 136109
+2024-05-13 20:47:26,194 Saved to models/linear_regression_v01.joblib
+2024-05-13 20:47:26,194 R2 = 0.539     MAE = 3315042     Price = 250901 * area + 13285
+2024-05-13 20:47:52,867 Saved to models/linear_regression_v01.joblib
+2024-05-13 20:47:52,883 R2 = 0.539     MAE = 3315042     Price = 250901 * area + 13285
