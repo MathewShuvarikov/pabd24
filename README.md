@@ -20,25 +20,21 @@ pip install -r requirements.txt
 ## Usage
 
 ### 1. Data collection
-<li><strong><a href="https://github.com/MathewShuvarikov/pabd24/blob/main/src/parse_cian.py">parse_cian.py</a></strong> Script for pasing flats charachteristics (e.g. price, location, meters etc.).</li>
+<li><strong><a href="https://github.com/MathewShuvarikov/pabd24/blob/main/src/parse_cian.py">parse_cian.py</a></strong> Script for parsing flats charachteristics (e.g. price, location, meters etc.).</li>
 
 ### 2. Upload data to S3 storage
-Для доступа к хранилищу скопируйте файл `.env` в корень проекта.  
+<li><strong><a href="https://github.com/MathewShuvarikov/pabd24/blob/main/src/upload_to_s3.py">upload_to_s3.py</a></strong> Script for uploading parsed files to S3 storage.</li> 
 
-todo  
+### 3.Download data to your local machine 
+<li><strong><a href="https://github.com/MathewShuvarikov/pabd24/blob/main/src/download_from_s3.py">download_from_s3.py</a></strong> Script for downloading files from S3 storage to your local directory.</li> 
 
-### 3. Загрузка данных из S3 на локальную машину  
-
-todo  
-
-### 4. Предварительная обработка данных  
-
-todo 
+### 4. Data preprocessing 
+<li><strong><a href="https://github.com/MathewShuvarikov/pabd24/blob/main/src/preprocess_data.py">preprocess_data.py</a></strong> Script for data preprocessing.</li> 
+NOTE: this script prepares data for simple paired linear regression model, however, further I use multiple features models, thus, whole processing is included in train file (next step)
 
 ### 5. Обучение модели 
-
-todo Описание модели и входных параметров для предсказания здесь.  
-
+<li><strong><a href="https://github.com/MathewShuvarikov/pabd24/blob/main/src/train_model.py">train_model.py</a></strong> Script for data process and model training.</li> 
+For feature engineering, I used data in what urban district/county (there are 12 of them) the flat is located. File with mapping lies <a href="https://github.com/MathewShuvarikov/pabd24/blob/main/mapping/county.txt">here.
 ### 6. Запуск приложения flask 
 
 todo
