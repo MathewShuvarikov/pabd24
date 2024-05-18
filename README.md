@@ -1,2 +1,3 @@
 # Predictive Big Data Analytics
-Это временная ветка
+
+In this repo I create a web-app which determines the price for a flat in Moscow using ML-model under the hood
