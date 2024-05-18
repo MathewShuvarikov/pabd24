@@ -15,7 +15,7 @@ source venv/bin/activate  # mac or linux
 .\venv\Scripts\activate   # windows
 
 pip install -r requirements.txt
-
+```
 
 ## Usage
 
