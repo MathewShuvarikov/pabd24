@@ -21,10 +21,17 @@ pip install -r requirements.txt
 
 ### 1. Data collection
 <li><strong><a href="https://github.com/MathewShuvarikov/pabd24/blob/main/src/parse_cian.py">parse_cian.py</a></strong> Script for parsing flats charachteristics (e.g. price, location, meters etc.).</li>
-
+```sh
+python src/parse_cian.py 
+```  
 ### 2. Upload data to S3 storage
 <li><strong><a href="https://github.com/MathewShuvarikov/pabd24/blob/main/src/upload_to_s3.py">upload_to_s3.py</a></strong> Script for uploading parsed files to S3 storage.</li> 
+Для доступа к хранилищу скопируйте файл `.env` в корень проекта.  
 
+```sh
+python src/upload_to_s3.py -i data/raw/file.csv
+```
+i - an argument we use in funtion, in this specific situation we provide a file path to our function
 ### 3.Download data to your local machine 
 <li><strong><a href="https://github.com/MathewShuvarikov/pabd24/blob/main/src/download_from_s3.py">download_from_s3.py</a></strong> Script for downloading files from S3 storage to your local directory.</li> 
 
