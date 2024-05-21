@@ -24,6 +24,7 @@ pip install -r requirements.txt
 ```sh
 python src/parse_cian.py 
 ```  
+
 ### 2. Upload data to S3 storage
 <li><strong><a href="https://github.com/MathewShuvarikov/pabd24/blob/main/src/upload_to_s3.py">upload_to_s3.py</a></strong> Script for uploading parsed files to S3 storage.</li> 
 Для доступа к хранилищу скопируйте файл `.env` в корень проекта.  
