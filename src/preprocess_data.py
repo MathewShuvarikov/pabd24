@@ -15,8 +15,8 @@ IN_FILES = ['data/raw/1_2024-05-09_23-01.csv',
             'data/raw/2_2024-05-09_23-16.csv',
             'data/raw/3_2024-05-09_23-24.csv']
 
-OUT_TRAIN = 'data/processed/train.csv'
-OUT_VAL = 'data/processed/val.csv'
+OUT_TRAIN = 'data/proc/train.csv'
+OUT_VAL = 'data/proc/val.csv'
 
 TRAIN_SIZE = 0.9
 

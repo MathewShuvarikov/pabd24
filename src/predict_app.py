@@ -1,6 +1,6 @@
-"""House price prediction service"""
+import os
 
-from flask import Flask, request
+from flask import Flask, request, send_from_directory
 from flask_cors import CORS
 
 app = Flask(__name__)
@@ -23,6 +23,10 @@ def predict(in_data: dict) -> int:
 def home():
     return '<h1>Housing price service.</h1> Use /predict endpoint'
 
+@app.route('/favicon.ico')
+def favicon():
+    return send_from_directory(os.path.join(app.root_path, 'static'),
+                               'favicon.ico', mimetype='image/x-icon')
 
 @app.route("/predict", methods=['POST'])
 def predict_web_serve():
