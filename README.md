@@ -21,6 +21,7 @@ pip install -r requirements.txt
 
 ### 1. Data collection
 <li><strong><a href="https://github.com/MathewShuvarikov/pabd24/blob/main/src/parse_cian.py">parse_cian.py</a></strong> Script for parsing flats charachteristics (e.g. price, location, meters etc.).</li>
+
 ```sh
 python src/parse_cian.py 
 ```  
