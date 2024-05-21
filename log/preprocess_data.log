@@ -1,4 +1,0 @@
-2024-05-13 20:10:24,010 Write ['data/raw/1_2024-05-09_23-01.csv', 'data/raw/2_2024-05-09_23-16.csv', 'data/raw/3_2024-05-09_23-24.csv'] to train.csv and val.csv. Train set size: 0.9
-2024-05-13 20:14:35,386 Write ['data/raw/1_2024-05-09_23-01.csv', 'data/raw/2_2024-05-09_23-16.csv', 'data/raw/3_2024-05-09_23-24.csv'] to train.csv and val.csv. Train set size: 0.9
-2024-05-13 20:22:09,112 Write ['data/raw/1_2024-05-09_23-01.csv', 'data/raw/2_2024-05-09_23-16.csv', 'data/raw/3_2024-05-09_23-24.csv'] to train.csv and val.csv. Train set size: 0.9
-2024-05-13 20:31:27,991 Write ['data/raw/1_2024-05-09_23-01.csv', 'data/raw/2_2024-05-09_23-16.csv', 'data/raw/3_2024-05-09_23-24.csv'] to train.csv and val.csv. Train set size: 0.9
