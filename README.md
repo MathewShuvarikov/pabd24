@@ -42,14 +42,14 @@ i - an argument we use in funtion, in this specific situation we provide a file 
 
 NOTE: this script prepares data for simple paired linear regression model, however, further I use multiple features models, thus, whole processing is included in train file (next step).
 
-### 5. Обучение модели 
+### 5. Model training
 <li><strong><a href="https://github.com/MathewShuvarikov/pabd24/blob/main/src/train_model.py">train_model.py</a></strong> Script for data process and model training.</li> 
 For feature engineering, I used data in what urban district/county (there are 12 of them) the flat is located. File with mapping lies <a href="https://github.com/MathewShuvarikov/pabd24/blob/main/mapping/county.txt">here</a></li> 
 
-### 6. Запуск приложения flask 
+### 6. Flask app launch
 
 todo
 
-### 7. Использование сервиса через веб интерфейс 
+### 7. Service usage through web-interface
 
-Для использования сервиса используйте файл `web/index.html`.  
+For service usage use this file `web/index.html`.  
