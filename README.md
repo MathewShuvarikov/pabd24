@@ -36,15 +36,18 @@ python src/upload_to_s3.py -i data/raw/file.csv
 i - an argument we use in funtion, in this specific situation we provide a file path to our function
 ### 3.Download data to your local machine 
 <li><strong><a href="https://github.com/MathewShuvarikov/pabd24/blob/main/src/download_from_s3.py">download_from_s3.py</a></strong> Script for downloading files from S3 storage to your local directory.</li> 
+
 ```sh
 python src/download_from_s3.py
 ```
+
 ### 4. Data preprocessing 
 <li><strong><a href="https://github.com/MathewShuvarikov/pabd24/blob/main/src/preprocess_data.py">preprocess_data.py</a></strong> Script for data preprocessing.</li> 
 
 ```sh
 python src/preprocess_data.py
 ```
+
 NOTE: this script prepares data for simple paired linear regression model, however, further I use multiple features models, thus, whole processing is included in train file (next step).
 
 ### 5. Model training
