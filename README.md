@@ -33,7 +33,7 @@ python src/parse_cian.py
 ```sh
 python src/upload_to_s3.py -i data/raw/file.csv
 ```
-i - an argument we use in funtion, in this specific situation we provide a file path to our function
+i - an argument we use in funtion ('i' for 'input'), in this specific situation we provide a path to files we want to upload to S3 storage
 ### 3.Download data to your local machine 
 <li><strong><a href="https://github.com/MathewShuvarikov/pabd24/blob/main/src/download_from_s3.py">download_from_s3.py</a></strong> Script for downloading files from S3 storage to your local directory.</li> 
 
