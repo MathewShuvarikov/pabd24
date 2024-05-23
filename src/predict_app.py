@@ -15,7 +15,7 @@ def predict(in_data: dict) -> int:
     :rtype: int
     """
     area = float(in_data['area'])
-    AVG_PRICE = 200_000                 # RUB / m2
+    AVG_PRICE = 3_000                 # RUB / m2
     return int(area * AVG_PRICE)
 
 
