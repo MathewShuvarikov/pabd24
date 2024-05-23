@@ -22,25 +22,46 @@ pip install -r requirements.txt
 ### 1. Data collection
 <li><strong><a href="https://github.com/MathewShuvarikov/pabd24/blob/main/src/parse_cian.py">parse_cian.py</a></strong> Script for parsing flats charachteristics (e.g. price, location, meters etc.).</li>
 
+```sh
+python src/parse_cian.py 
+```  
+
 ### 2. Upload data to S3 storage
 <li><strong><a href="https://github.com/MathewShuvarikov/pabd24/blob/main/src/upload_to_s3.py">upload_to_s3.py</a></strong> Script for uploading parsed files to S3 storage.</li> 
+Для доступа к хранилищу скопируйте файл `.env` в корень проекта.  
 
+```sh
+python src/upload_to_s3.py -i data/raw/file.csv
+```
+i - an argument we use in funtion ('i' for 'input'), in this specific situation we provide a path to files we want to upload to S3 storage
 ### 3.Download data to your local machine 
 <li><strong><a href="https://github.com/MathewShuvarikov/pabd24/blob/main/src/download_from_s3.py">download_from_s3.py</a></strong> Script for downloading files from S3 storage to your local directory.</li> 
+
+```sh
+python src/download_from_s3.py
+```
 
 ### 4. Data preprocessing 
 <li><strong><a href="https://github.com/MathewShuvarikov/pabd24/blob/main/src/preprocess_data.py">preprocess_data.py</a></strong> Script for data preprocessing.</li> 
 
+```sh
+python src/preprocess_data.py
+```
+
 NOTE: this script prepares data for simple paired linear regression model, however, further I use multiple features models, thus, whole processing is included in train file (next step).
 
-### 5. Обучение модели 
+### 5. Model training
 <li><strong><a href="https://github.com/MathewShuvarikov/pabd24/blob/main/src/train_model.py">train_model.py</a></strong> Script for data process and model training.</li> 
 For feature engineering, I used data in what urban district/county (there are 12 of them) the flat is located. File with mapping lies <a href="https://github.com/MathewShuvarikov/pabd24/blob/main/mapping/county.txt">here</a></li> 
 
-### 6. Запуск приложения flask 
+```sh
+python src/train_model.py
+```
+
+### 6. Flask app launch
 
 todo
 
-### 7. Использование сервиса через веб интерфейс 
+### 7. Service usage through web-interface
 
-Для использования сервиса используйте файл `web/index.html`.  
+For service usage use this file `web/index.html`.  
