@@ -5,7 +5,7 @@ from joblib import load
 from sklearn.metrics import mean_absolute_error as mae, mean_absolute_percentage_error as mape
 import numpy as np
 
-MODEL_SAVE_PATH = 'models/linear_regression_v01.joblib'
+MODEL_SAVE_PATH = 'models/random_forest.joblib'
 TEST_DATA = 'data/proc/val.csv'
 
 logger = logging.getLogger(__name__)

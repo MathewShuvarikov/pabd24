@@ -39,7 +39,7 @@ def main(args):
     df.drop(columns=['price_per_month', 'commissions'], inplace=True)
     print('dataframe shape', df.shape)
 
-    train_df, val_df = train_test_split(df, train_size=TRAIN_SIZE, random_state=1)
+    train_df, val_df = train_test_split(df, train_size=TRAIN_SIZE, random_state=1, shuffle=True)
     train_df.to_csv(OUT_TRAIN, index=0)
     val_df.to_csv(OUT_VAL, index=0)
     print('train shape', train_df.shape, 'val shape', val_df.shape)

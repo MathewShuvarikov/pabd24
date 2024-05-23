@@ -3,3 +3,4 @@ venv
 /.env
 /.env.prod
 src/add_data_cian.py
+notebooks/*.ipynb_checkpoints
