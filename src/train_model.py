@@ -2,8 +2,8 @@ import argparse
 import logging
 import pandas as pd
 from sklearn.linear_model import LinearRegression
-from sklearn.metrics import mean_absolute_error
 from joblib import dump
+import numpy as np
 
 logger = logging.getLogger(__name__)
 logging.basicConfig(
@@ -19,8 +19,8 @@ MODEL_SAVE_PATH = 'models/linear_regression_v01.joblib'
 
 def main(args):
     df_train = pd.read_csv(TRAIN_DATA)
-    x_train = df_train[['total_meters']]
-    y_train = df_train['price']
+    x_train = df_train.drop(columns='price')
+    y_train = np.log(df_train['price'])
 
     linear_model = LinearRegression()
     linear_model.fit(x_train, y_train)
@@ -31,7 +31,7 @@ def main(args):
     c = int(linear_model.coef_[0])
     inter = int(linear_model.intercept_)
 
-    logger.info(f'R2 = {r2:.3f}   Price = {c} * area + {inter}')
+    logger.info(f'R2 = {r2:.3f}')
 
 
 if __name__ == '__main__':

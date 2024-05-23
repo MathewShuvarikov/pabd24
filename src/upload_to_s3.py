@@ -1,13 +1,17 @@
 import argparse
-
+import os
 from dotenv import dotenv_values
 import boto3
 
 BUCKET_NAME = 'pabd24'
 YOUR_ID = '28'
-CSV_PATH = ['data/raw/1_2024-05-09_23-01.csv',
-            'data/raw/2_2024-05-09_23-16.csv',
-            'data/raw/3_2024-05-09_23-24.csv']
+
+# CSV_PATH = []
+# root = 'data/raw/'
+# for i in os.listdir(root):
+#     CSV_PATH.append(root+i)
+
+CSV_PATH = ['data/raw/agg_data.csv']
 
 config = dotenv_values(".env")
 
