@@ -5,6 +5,7 @@ from sklearn.linear_model import LinearRegression
 from sklearn.ensemble import RandomForestRegressor
 from joblib import dump
 import numpy as np
+from lightgbm import LGBMRegressor
 
 logger = logging.getLogger(__name__)
 logging.basicConfig(
@@ -15,7 +16,7 @@ logging.basicConfig(
 
 TRAIN_DATA = 'data/proc/train.csv'
 VAL_DATA = 'data/proc/val.csv'
-MODEL_SAVE_PATH = 'models/random_forest.joblib'
+MODEL_SAVE_PATH = 'models/lgbm.joblib'
 
 
 def main(args):
@@ -29,11 +30,19 @@ def main(args):
     # logger.info(f'Saved to {args.model}')
     # r2 = linear_model.score(x_train, y_train)
 
-    rf = RandomForestRegressor(random_state=0, n_jobs=-1,
-                               ** {'max_depth': 9, 'max_features': 'sqrt', 'min_samples_leaf': 1, 'min_samples_split': 2})
-    rf.fit(x_train, y_train)
-    r2 = rf.score(x_train, y_train)
-    dump(rf, args.model)
+    # rf = RandomForestRegressor(random_state=0, n_jobs=-1,
+    #                            ** {'max_depth': 9, 'max_features': 'sqrt', 'min_samples_leaf': 1, 'min_samples_split': 2})
+    # rf.fit(x_train, y_train)
+    # r2 = rf.score(x_train, y_train)
+    # dump(rf, args.model)
+    # logger.info(f'Saved to {args.model}')
+
+    lgbm = LGBMRegressor(random_state=0, n_jobs=-1,
+                               **{'n_estimators': 269, 'max_depth': 9, 'learning_rate': 0.05096330723976655,
+                                  'num_leaves': 98, 'reg_alpha': 0.17995860538849384, 'reg_lambda': 30.29993490458629})
+    lgbm.fit(x_train, y_train)
+    r2 = lgbm.score(x_train, y_train)
+    dump(lgbm, args.model)
     logger.info(f'Saved to {args.model}')
 
     # c = int(linear_model.coef_[0])
