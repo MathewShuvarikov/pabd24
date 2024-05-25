@@ -47,20 +47,21 @@ python src/download_from_s3.py
 ```sh
 python src/preprocess_data.py
 ```
-
-NOTE: this script prepares data for simple paired linear regression model, however, further I use multiple features models, thus, whole processing is included in train file (next step).
+For feature engineering, I used data in what urban district/county (there are 12 of them) the flat is located. File with mapping lies <a href="https://github.com/MathewShuvarikov/pabd24/blob/main/mapping/county.txt">here</a></li> 
 
 ### 5. Model training
-<li><strong><a href="https://github.com/MathewShuvarikov/pabd24/blob/main/src/train_model.py">train_model.py</a></strong> Script for data process and model training.</li> 
-For feature engineering, I used data in what urban district/county (there are 12 of them) the flat is located. File with mapping lies <a href="https://github.com/MathewShuvarikov/pabd24/blob/main/mapping/county.txt">here</a></li> 
+<li><strong><a href="https://github.com/MathewShuvarikov/pabd24/blob/main/src/train_model.py">train_model.py</a></strong> Script for model training.</li> 
 
 ```sh
 python src/train_model.py
 ```
 
 ### 6. Flask app launch
+<li><strong><a href="https://github.com/MathewShuvarikov/pabd24/blob/main/src/predict_app.py">predict_app.py</a></strong> Script for app launching.</li>
 
-todo
+```sh
+python src/predict_app.py
+```
 
 ### 7. Service usage through web-interface
 
