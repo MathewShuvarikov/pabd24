@@ -41,7 +41,7 @@ def predict(in_data: dict) -> int:
 
     # data.to_csv(r"C:\Users\shuva\Downloads\fcheck.csv", index=0)
 
-    return int(np.exp(prediction))
+    return int(np.exp(prediction[0]))
 
 
 @app.route("/")
