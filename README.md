@@ -47,7 +47,7 @@ python src/download_from_s3.py
 ```sh
 python src/preprocess_data.py
 ```
-For feature engineering, I used data in what urban district/county (there are 12 of them) the flat is located. File with mapping lies <a href="https://github.com/MathewShuvarikov/pabd24/blob/main/mapping/county.txt">here</a></li> 
+For feature engineering, I used data in what administrative district (there are 12 of them) the flat is located. File with mapping lies <a href="https://github.com/MathewShuvarikov/pabd24/blob/main/mapping/county.txt">here</a></li> 
 
 ### 5. Model training
 <li><strong><a href="https://github.com/MathewShuvarikov/pabd24/blob/main/src/train_model.py">train_model.py</a></strong> Script for model training.</li> 
