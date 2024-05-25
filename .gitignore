@@ -3,4 +3,5 @@ venv
 /.env
 /.env.prod
 src/add_data_cian.py
+web/index_2_0.html
 notebooks/*.ipynb_checkpoints
