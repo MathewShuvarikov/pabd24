@@ -16,6 +16,7 @@ def main(n_rooms=1, start_page=1, end_page=2, object_type="secondary"):
         deal_type="sale",
         rooms=(n_rooms,),
         with_saving_csv=False,
+        with_extra_data=True,
         additional_settings={
             "start_page": start_page,
             "end_page": end_page,

@@ -24,7 +24,7 @@ def main(args):
     y_pred = np.exp(model.predict(x_test))
     mae1 = mae(y_pred, y_test)
     mape1 = mape(y_pred, y_test)
-    logger.info(f'Test model {MODEL_SAVE_PATH} on {TEST_DATA}, MAE = {mae1:.0f}, MAPE = {mape1:.3f}')
+    logger.info(f'Test model {MODEL_SAVE_PATH} on {TEST_DATA}, MAE = {mae1:,.0f}, MAPE = {mape1:.3f}')
 
 
 if __name__ == '__main__':

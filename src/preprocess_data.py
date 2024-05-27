@@ -38,7 +38,7 @@ def main(args):
     df.dropna(inplace=True)
     df.drop(columns=['price_per_month', 'commissions'], inplace=True)
     print('dataframe shape', df.shape)
-
+    df = df.loc[df.price<=30_000_000,:]
     train_df, val_df = train_test_split(df, train_size=TRAIN_SIZE, random_state=1, shuffle=True)
     train_df.to_csv(OUT_TRAIN, index=0)
     val_df.to_csv(OUT_VAL, index=0)
