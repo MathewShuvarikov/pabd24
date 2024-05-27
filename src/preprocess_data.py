@@ -26,6 +26,7 @@ def main(args):
         df1 = pd.read_csv(args.input[i], delimiter=',')
         df = pd.concat([df, df1], axis=0, ignore_index=True)
 
+    print('initial df shape', df.shape)
     mapping = pd.read_csv('mapping/county.txt', sep='|')
     df = df.merge(mapping, left_on = 'district', right_on = 'district_name',how='left')
     df['county_short'] = np.where( df['county_short'].isna(), 'unknown', df['county_short'])
@@ -38,7 +39,9 @@ def main(args):
     df.dropna(inplace=True)
     df.drop(columns=['price_per_month', 'commissions'], inplace=True)
     print('dataframe shape', df.shape)
-    df = df.loc[df.price<=30_000_000,:]
+    # df = df.loc[df.price<=30_000_000,:]
+    df['elite_estate'] = np.where(df.price<=30_000_000, 0, 1)
+
     train_df, val_df = train_test_split(df, train_size=TRAIN_SIZE, random_state=1, shuffle=True)
     train_df.to_csv(OUT_TRAIN, index=0)
     val_df.to_csv(OUT_VAL, index=0)
