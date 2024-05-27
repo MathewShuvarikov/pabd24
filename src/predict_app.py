@@ -1,16 +1,36 @@
 import os
 import  numpy as np
-from flask import Flask, request, send_from_directory
+from flask import Flask, request, send_from_directory, url_for
 from flask_cors import CORS
+
+from dotenv import dotenv_values
+from flask_cors import CORS
+from flask_httpauth import HTTPTokenAuth
+from flask import send_from_directory
+from src.utils import predict_io_bounded, predict_cpu_bounded, predict_cpu_multithread
 
 import pandas as pd
 from joblib import load
+
 MODEL_SAVE_PATH = 'models/lgbm.joblib'
-model = load(MODEL_SAVE_PATH)
 
 app = Flask(__name__)
 CORS(app)
 
+config = dotenv_values(".env")
+auth = HTTPTokenAuth(scheme='Bearer')
+
+tokens = {
+    config['APP_TOKEN']: "user1",
+}
+
+model = load(MODEL_SAVE_PATH)
+
+
+@auth.verify_token
+def verify_token(token):
+    if token in tokens:
+        return tokens[token]
 
 def predict(in_data: dict) -> int:
     """ Predict house price from input data parameters.
@@ -39,7 +59,6 @@ def predict(in_data: dict) -> int:
     data = data[need_cols]
     prediction = model.predict(data)
 
-    # data.to_csv(r"C:\Users\shuva\Downloads\fcheck.csv", index=0)
 
     return int(np.exp(prediction[0]))
 
