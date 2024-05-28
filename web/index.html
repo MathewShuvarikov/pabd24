@@ -4,12 +4,12 @@
 </head>
   <style>
 body {
-  background-color: royalblue;
+  background-color: blue;
   color: white;
 }
 
 #result {
-  color: darkred;
+  color: white;
 }
 
 input:invalid {
@@ -71,8 +71,9 @@ input:valid {
 //  const submit_btn = document.getElementById("submit_btn");
 //  const result = document.getElementById("result");
 
-  //const ENDPOINT = "http://127.0.0.1:5000/predict";
-  const ENDPOINT = "http://192.144.12.8:5000/predict";
+  const ENDPOINT = "http://127.0.0.1:5000/predict";
+  //const ENDPOINT = "http://192.144.12.8:5000/predict";
+  //const ENDPOINT = "http://192.144.12.8:8000/predict";
   submit_btn.addEventListener("click", submit_click, false);
 
   function submit_click(event) {
