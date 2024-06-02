@@ -59,8 +59,7 @@ def predict(in_data: dict) -> int:
     data = data[need_cols]
     prediction = model.predict(data)
 
-    # return f"{int(np.exp(prediction[0])):,.0f}, +- 2.5 mln"
-    return predict_cpu_multithread(data['total_meters'], n=90_000_000)
+    return f"{int(np.exp(prediction[0])):,.0f}, +- 2.5 mln"
 
 @app.route("/")
 def home():
