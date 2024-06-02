@@ -60,7 +60,7 @@ def predict(in_data: dict) -> int:
     prediction = model.predict(data)
 
 
-    return int(np.exp(prediction[0]))
+    return f"{int(np.exp(prediction[0])):,.0f}, +- 2.5 mln"
 
 
 @app.route("/")
