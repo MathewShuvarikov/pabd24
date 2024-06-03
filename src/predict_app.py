@@ -59,7 +59,10 @@ def predict(in_data: dict) -> int:
     data = data[need_cols]
     prediction = model.predict(data)
 
-    return f"{int(np.exp(prediction[0])):,.0f}, +- 2.5 mln"
+    upper = int(np.exp(prediction[0])) + 2_500_000
+    lower = int(np.exp(prediction[0])) - 2_500_000
+
+    return f"{int(lower):,.0f} - {int(upper):,.0f}"
 
 @app.route("/")
 def home():
