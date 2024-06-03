@@ -66,3 +66,6 @@ python src/predict_app.py
 ### 7. Service usage through web-interface
 
 For service usage use this file `web/index.html`.  
+
+### 8. App on production server
+Detailed description of running this web-application through virtual machine using gunicorn is <li><strong><a href="https://github.com/MathewShuvarikov/pabd24/blob/main/src/predict_app.py">here</a></li>
