@@ -23,11 +23,11 @@ The load is created by the file `test/test_parallel.py `.
 
 
 ### Results and discussion
-1) When running predict_cpu_bounded on the flask dev server with n=5_000_000, we obtained [result](log/test_np_flask_cpu_5mln.txt). 
+1) When running predict_cpu_bounded on the flask dev server with n=5_000_000, we obtained [result](https://github.com/MathewShuvarikov/pabd24/blob/main/log/test_np_flask_cpu_5mln.txt). 
 All requests are processed simultaneously, in an average of 2 seconds. 
 In production, this is acceptable since it is a comparably fast result.
 
-2) When running predict_cpu_bounded on the flask dev server with n=15_000_000, we obtained [result](log/test_np_flask_cpu_15mln.txt). 
+2) When running predict_cpu_bounded on the flask dev server with n=15_000_000, we obtained [result](https://github.com/MathewShuvarikov/pabd24/blob/main/log/test_np_flask_cpu_15mln.txt). 
 All requests are processed simultaneously, in an average of 5.7 seconds. 
 In production, it's worse than the previous result, an average user won't appreciate such a long answer.
 
