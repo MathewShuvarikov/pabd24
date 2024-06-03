@@ -17,19 +17,29 @@ It is also necessary to empirically determine the critical value of `n` and comp
 There are two options available to launch the service: 
 - `python src/predict_app.py ` is a server designed for development. 
 - `gunicorn src.predict_app:app` is a server designed for continuous operation in production. 
+* We have used the second one
 
 The load is created by the file `test/test_parallel.py `.  
 
 
 ### Results and discussion
-1) При запуске predict_cpu_multithread на dev-сервере flask с n=20_000_000 получен [результат](log/test_np_flask.txt). 
-Все запросы обрабатываются одновременно, в среднем за 20 секунды. 
-На продакшене это неприемлимо, потому что ... 
+1) When running predict_cpu_bounded on the flask dev server with n=5_000_000, we obtained [result](log/test_np_flask_cpu_5mln.txt). 
+All requests are processed simultaneously, in an average of 2 seconds. 
+In production, this is acceptable since it is a comparably fast result.
 
-2) При запуске predict_cpu_multithread на prod-сервере gunicorn с n=20_000_000 получен [результат](log/test_np_flask.txt). 
-Все запросы обрабатываются последовательно, в среднем за 20 секунды. 
-На продакшене это предпочтительно, потому что ... 
+2) When running predict_cpu_bounded on the flask dev server with n=15_000_000, we obtained [result](log/test_np_flask_cpu_15mln.txt). 
+All requests are processed simultaneously, in an average of 5.7 seconds. 
+In production, it's worse than the previous result, an average user won't appreciate such a long answer.
 
-...
+2) When running predict_cpu_bounded on the flask dev server with n=17_500_000, we obtained [result](log/test_np_flask_cpu_17_5mln.txt). 
+Server collapses. It is out of memory.
 
-6)
+4) When running predict_cpu_multithread on the flask dev server with n=75_000_000, we obtained [result](log/test_np_flask_mult_75mln.txt). 
+All requests are processed simultaneously, in an average of 2.5 seconds. 
+In production, this is acceptable since it is a comparably fast result.
+
+5) When running predict_cpu_multithread on the flask dev server with n=80_000_000, we obtained [result](log/test_np_flask_mult_80mln.txt). 
+All requests are processed simultaneously, in an average of 3.1 seconds.
+
+6) When running predict_cpu_multithread on the flask dev server with n=90_000_000, we obtained [result](log/test_np_flask_mult_90mln.txt). 
+Server collapses. It is out of memory.
