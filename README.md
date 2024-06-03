@@ -69,4 +69,5 @@ For service usage use this file `web/index.html`.
 
 ### 8. App on production server
 Detailed description of testing this web-application through virtual machine using gunicorn is <strong><a href="https://github.com/MathewShuvarikov/pabd24/blob/main/docs/report_3.md">here.</a>
+
 Port on which the application is currently running: 'http://192.144.12.8:8000/predict'
