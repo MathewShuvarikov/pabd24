@@ -41,6 +41,12 @@ def predict(in_data: dict) -> int:
     """
 
     data = pd.DataFrame(in_data, index=[0])
+
+    mapping = pd.read_csv('mapping/county.txt', sep='|')
+    data = data.merge(mapping, left_on='district', right_on='district_name', how='left')
+    data['county_short'] = np.where(data['county_short'].isna(), 'unknown', data['county_short'])
+    data['county_short'] = np.where(data['county_short'] == 'Марьина роща', 'СВАО', data['county_short'])
+
     data[['total_meters', 'rooms_count', 'floor', 'floors_count']] = data[['total_meters', 'rooms_count', 'floor', 'floors_count']].astype(float)
     data['top_bottom_floor'] = np.where((data.floor == data.floors_count) | (data.floor == 1), 1, 0)
     data = pd.get_dummies(data, columns=['county_short'], dtype=int)
