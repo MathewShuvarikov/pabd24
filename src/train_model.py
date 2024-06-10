@@ -1,3 +1,7 @@
+### with new features
+# ['floor', 'floors_count', 'rooms_count', 'total_meters', 'top_bottom_floor', 'county_short_ВАО', 'county_short_ЗАО',
+#      'county_short_ЗелАО', 'county_short_САО', 'county_short_СВАО', 'county_short_СЗАО', 'county_short_ТАО',
+#      'county_short_ЦАО', 'county_short_ЮАО', 'county_short_ЮВАО', 'county_short_ЮЗАО', 'object_type_secondary']
 import argparse
 import logging
 import pandas as pd
