@@ -31,7 +31,7 @@ def main(args):
     df = df.merge(mapping, left_on = 'district', right_on = 'district_name',how='left')
     df['county_short'] = np.where( df['county_short'].isna(), 'unknown', df['county_short'])
     df['county_short'] = np.where(df['county_short'] == 'Марьина роща', 'СВАО', df['county_short'])
-    df['top_bottom_floor'] =  np.where((df.floor == df.floors_count) | (df.floor == 1), 1, 0)
+    df['top_bottom_floor'] = np.where((df.floor == df.floors_count) | (df.floor == 1), 1, 0)
     df.dropna(inplace=True, subset='district')
 
     df = pd.get_dummies(df, columns=['county_short', 'object_type'], drop_first=True, dtype='int')
