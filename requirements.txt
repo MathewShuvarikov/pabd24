@@ -11,3 +11,4 @@ numpy
 scikit-learn
 lightgbm
 flask_httpauth
+dvc[s3]

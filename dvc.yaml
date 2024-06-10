@@ -1,0 +1,7 @@
+stages:
+  preprocess_train:
+    cmd: python src\preprocess_data.py -s 0.9
+  train_model:
+    cmd: python src\train_model.py
+  test_model:
+    cmd: python src\test_model.py

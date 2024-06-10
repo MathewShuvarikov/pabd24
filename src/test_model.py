@@ -18,6 +18,7 @@ logging.basicConfig(
 
 def main(args):
     df_test = pd.read_csv(TEST_DATA)
+    print(TEST_DATA)
     x_test = df_test.drop(columns='price')
     y_test = df_test['price']
     model = load(MODEL_SAVE_PATH)
@@ -32,5 +33,6 @@ if __name__ == '__main__':
     parser.add_argument('-m', '--model',
                         help='Model save path',
                         default=MODEL_SAVE_PATH)
+    parser.add_argument("-p", "--TEST_DATA", type=int, required=False, help="TEST_DATA_PATH")
     args = parser.parse_args()
     main(args)
