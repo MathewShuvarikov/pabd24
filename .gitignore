@@ -3,6 +3,7 @@ venv
 /.env
 /.env.prod
 src/add_data_cian.py
+src/service_test.py
 web/index_2_0.html
 web/index_labintsev.html
 notebooks/*.ipynb_checkpoints
