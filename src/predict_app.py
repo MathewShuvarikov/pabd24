@@ -62,7 +62,7 @@ def predict(in_data: dict) -> int:
     upper = int(np.exp(prediction[0])) + 2_500_000
     lower = int(np.exp(prediction[0])) - 2_500_000
 
-    return f"{int(lower):,.0f} - {int(upper):,.0f}"
+    return int(np.exp(prediction[0]))
 
 @app.route("/")
 def home():
