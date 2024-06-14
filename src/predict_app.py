@@ -7,7 +7,7 @@ from dotenv import dotenv_values
 from flask_cors import CORS
 from flask_httpauth import HTTPTokenAuth
 from flask import send_from_directory
-from utils import predict_io_bounded, predict_cpu_bounded, predict_cpu_multithread
+from src.utils import predict_io_bounded, predict_cpu_bounded, predict_cpu_multithread
 
 import pandas as pd
 from joblib import load
