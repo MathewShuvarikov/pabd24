@@ -24,19 +24,22 @@ The load is created by the file `test/test_parallel.py `.
 
 ### Results and discussion
 1) When running predict_io_bounded on the gunicorn prom server we obtained [result](https://github.com/MathewShuvarikov/pabd24/blob/main/log/test_gunicorn_predict_io_bounded.txt). 
-All requests are processed simultaneously, in an average of 5.6 seconds. 
-In production, this is acceptable since it is a comparably fast result.
+All requests are processed sequentially, in an average of 5.6 seconds.
 
-2) When running predict_cpu_bounded on the gunicorn prom server with n=15_000_000, we obtained [result](https://github.com/MathewShuvarikov/pabd24/blob/main/log/test_np_flask_cpu_15mln.txt). 
-All requests are processed simultaneously, in an average of 5.7 seconds. 
-In production, it's worse than the previous result, an average user won't appreciate such a long answer.
+2) When running predict_cpu_bounded on the gunicorn prom server with n=15_000_000, we obtained [result](https://github.com/MathewShuvarikov/pabd24/blob/main/log/test_gunicorn_cpu_15mln.txt). 
+All requests are processed sequentially, in an average of 5.7 seconds. Server collapses with n = 17_500_000.
 
-4) When running predict_cpu_multithread on the gunicorn prom server with n=75_000_000, we obtained [result](https://github.com/MathewShuvarikov/pabd24/blob/main/log/test_np_flask_mult_75mln.txt). 
-All requests are processed simultaneously, in an average of 2.5 seconds. 
-In production, this is acceptable since it is a comparably fast result.
+3) When running predict_cpu_multithread on the gunicorn prom server with n=75_000_000, we obtained [result](https://github.com/MathewShuvarikov/pabd24/blob/main/log/test_gunicorn_mult_75mln.txt). 
+All requests are processed sequentially, in an average of 2.5 seconds. Server collapses with n = 90_000_000.
 
-5) When running predict_cpu_multithread on the gunicorn prom server with n=80_000_000, we obtained [result](https://github.com/MathewShuvarikov/pabd24/blob/main/log/test_np_flask_mult_80mln.txt). 
-All requests are processed simultaneously, in an average of 3.1 seconds.
+4) When running predict_io_bounded on the flask dev server , we obtained [result](https://github.com/MathewShuvarikov/pabd24/blob/main/log/test_flask_predict_io_bounded.txt). 
+All requests are processed simultaneously, in an average of 0.08 seconds.
 
-6) When running predict_cpu_multithread on the gunicorn prom server with n=90_000_000, we obtained [result](https://github.com/MathewShuvarikov/pabd24/blob/main/log/test_np_flask_mult_90mln.txt). 
-Server collapses. It is out of memory.
+5) When running predict_cpu_bounded on the flask dev server with n=15_000_000, we obtained [result](https://github.com/MathewShuvarikov/pabd24/blob/main/log/test_flask_predict_cpu_bounded.txt). 
+All requests are processed simultaneously, in an average of 0.08 seconds.
+
+6) When running predict_cpu_multithread on the flask dev server with n=75_000_000, we obtained [result](https://github.com/MathewShuvarikov/pabd24/blob/main/log/test_flask_predict_mult_bounded.txt). 
+All requests are processed simultaneously, in an average of 0.07 seconds.
+
+
+
