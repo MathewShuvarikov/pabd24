@@ -42,4 +42,7 @@ All requests are processed simultaneously, in an average of 0.08 seconds.
 All requests are processed simultaneously, in an average of 0.07 seconds.
 
 
-
+### Conclusion
+Based on the test results, the following conclusions can be drawn:
+- Flask is suitable for development and testing, but it does not suit the high workload in production.
+- Gunicorn shows the best results under heavy load.
