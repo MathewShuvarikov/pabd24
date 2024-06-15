@@ -9,12 +9,13 @@ HEADERS = {"Authorization": f"Bearer {config['APP_TOKEN']}"}
 
 
 def do_request(area: int) -> str:
-    data = {'total_meters': area,
-                'rooms_count': 1,
-                'floor': 1,
-                'floors_count': 1,
-                'county_short': "ЦАО",
-                'object_type': "Новостройка"}
+    # data = {'total_meters': area,
+    #             'rooms_count': 1,
+    #             'floor': 1,
+    #             'floors_count': 1,
+    #             'county_short': "ЦАО",
+    #             'object_type': "Новостройка"}
+    data = {'total_meters': area}
     t0 = time.time()
     resp = requests.post(
         endpoint,

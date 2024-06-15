@@ -40,8 +40,7 @@ def main(args):
 
     lgbm = LGBMRegressor(random_state=0, n_jobs=-1,**{'n_estimators': 86, 'max_depth': 5, 'learning_rate': 0.24681488010947256,
                                                       'num_leaves': 14, 'reg_alpha': 1.0374405840419012, 'reg_lambda': 28.361258497509773})
-# **{'n_estimators': 269, 'max_depth': 9, 'learning_rate': 0.05096330723976655,
-#   'num_leaves': 98, 'reg_alpha': 0.17995860538849384, 'reg_lambda': 30.29993490458629})
+
     lgbm.fit(x_train, y_train)
     r2 = lgbm.score(x_train, y_train)
     mape1 = mape(np.exp(y_train), np.exp(lgbm.predict(x_train)))
