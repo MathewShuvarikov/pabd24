@@ -48,8 +48,8 @@ def predict(in_data: dict) -> int:
         data['county_short'] = np.where(data['county_short'].isna(), 'unknown', data['county_short'])
         data['county_short'] = np.where(data['county_short'] == 'Марьина роща', 'СВАО', data['county_short'])
 
-    if 'object_type_secondary' not in data.columns:
-        data['object_type_secondary'] = 'secondary'
+    if 'object_type' not in data.columns:
+        data['object_type'] = 'secondary'
 
     data[['total_meters', 'rooms_count', 'floor', 'floors_count']] = data[['total_meters', 'rooms_count', 'floor', 'floors_count']].astype(float)
     data['top_bottom_floor'] = np.where((data.floor == data.floors_count) | (data.floor == 1), 1, 0)
