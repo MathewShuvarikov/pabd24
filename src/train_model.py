@@ -38,8 +38,8 @@ def main(args):
     # dump(rf, args.model)
     # logger.info(f'Saved to {args.model}')
 
-    lgbm = LGBMRegressor(random_state=0, n_jobs=-1,**{'n_estimators': 86, 'max_depth': 5, 'learning_rate': 0.24681488010947256,
-                                                      'num_leaves': 14, 'reg_alpha': 1.0374405840419012, 'reg_lambda': 28.361258497509773})
+    lgbm = LGBMRegressor(random_state=0, n_jobs=-1,**{'n_estimators': 73, 'max_depth': 4, 'learning_rate': 0.2333555765304363,
+                                                      'num_leaves': 18, 'reg_alpha': 0.6191071061084727, 'reg_lambda': 4.299778245226726})
 
     lgbm.fit(x_train, y_train)
     r2 = lgbm.score(x_train, y_train)
