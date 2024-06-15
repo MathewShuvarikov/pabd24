@@ -74,6 +74,6 @@ Port on which the application is currently running: 'http://192.144.12.8:8000/pr
 
 For app launching use docker:
 
-```bash 
+```sh 
 docker run mathewshivarikoff/pabd24:latest
 ```
