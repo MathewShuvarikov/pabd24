@@ -7,7 +7,7 @@ from dotenv import dotenv_values
 from flask_cors import CORS
 from flask_httpauth import HTTPTokenAuth
 from flask import send_from_directory
-from src.utils import predict_io_bounded, predict_cpu_bounded, predict_cpu_multithread
+# from src.utils import predict_io_bounded, predict_cpu_bounded, predict_cpu_multithread
 
 import pandas as pd
 from joblib import load
@@ -27,7 +27,7 @@ tokens = {
 model = load(MODEL_SAVE_PATH)
 
 
-@auth.verify_token
+@auth.verify_tokendocker
 def verify_token(token):
     if token in tokens:
         return tokens[token]
