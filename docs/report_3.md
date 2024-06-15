@@ -33,7 +33,7 @@ All requests are processed sequentially, in an average of 5.7 seconds. Server co
 All requests are processed sequentially, in an average of 2.5 seconds. Server collapses with n = 90_000_000.
 
 4) When running predict_io_bounded on the flask dev server , we obtained [result](https://github.com/MathewShuvarikov/pabd24/blob/main/log/test_flask_predict_io_bounded.txt). 
-All requests are processed simultaneously, in an average of 0.08 seconds.
+All requests are processed simultaneously, in an average of 1.01 seconds.
 
 5) When running predict_cpu_bounded on the flask dev server with n=15_000_000, we obtained [result](https://github.com/MathewShuvarikov/pabd24/blob/main/log/test_flask_predict_cpu_bounded.txt). 
 All requests are processed simultaneously, in an average of 0.08 seconds.
