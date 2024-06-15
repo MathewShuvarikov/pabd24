@@ -69,8 +69,8 @@ For service usage use this file `web/index.html`.
 
 ### 8. App on production server
 Detailed description of testing this web-application through virtual machine using gunicorn is <strong><a href="https://github.com/MathewShuvarikov/pabd24/blob/main/docs/report_3.md">here</a></strong> 
-For app launching use gunicorn:
 
+For app launching use gunicorn:
 ```sh 
 gunicorn -b 0.0.0.0 -w 1 src.predict_app:app
 ```
