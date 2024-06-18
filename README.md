@@ -76,7 +76,7 @@ gunicorn -b 0.0.0.0 src.predict_app:app
 ```
 Port on which the application is currently running: 'http://192.144.12.8:8000/predict'
 
-For app launching you may docker:
+For app launching you may use docker:
 ```sh 
 docker run mathewshivarikoff/pabd24:latest
 ```
